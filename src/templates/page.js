@@ -69,11 +69,21 @@ const Container = styled.div`
 
 const FeaturedImage = styled.figure`
   max-width: 100%;
-  float: left;
+  margin: -9rem auto 1rem;
+  width: 50vw;
+
+  ${media.sm`
+    width: 35vw;
+    margin: -10rem 2rem 1.5rem;
+    float: left;
+  `}
+
 
   ${({theme}) => `
-    width: ${Math.floor(theme.outerWidth * 2 / 5)}px;
-    margin-left: ${theme.innerWidth - theme.outerWidth}px;
+    @media (min-width: ${theme.outerWidth}px) {
+      width: ${Math.floor(theme.outerWidth * 2 / 5)}px;
+      margin: 1.5rem 2rem 1.5rem ${theme.innerWidth - theme.outerWidth}px;
+    }
   `}
 
   ${boxShadow(4, mix(0.25,theme.color.blue[3],'black'))}
@@ -90,10 +100,11 @@ const Content = styled.article`
     background-color: white;
   `}
 
-
-  ${({theme, offset}) => offset && media.md`
-    width: ${theme.innerWidth}px;
-    margin-left: ${theme.outerWidth - theme.innerWidth}px;
+  ${({theme, offset}) => offset && `
+    @media (min-width: ${theme.outerWidth}px) {
+      width: ${theme.innerWidth}px;
+      margin-left: ${theme.outerWidth - theme.innerWidth}px;
+    }
   `}
 `
 

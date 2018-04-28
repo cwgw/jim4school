@@ -20,7 +20,7 @@ module.exports = {
           wpcom_app_clientSecret: "T7mhiHktAHGYh5P94iQEXMUVaA8l3nxU9relUb1MOlmBtueX7NfyPS6gNAmiPy82",
           wpcom_app_clientId: "57759",
           wpcom_user: "wright.char@gmail.com",
-          wpcom_pass: "EqvWTW@M9DGrW3>>a7HUogk4R",          
+          wpcom_pass: "EqvWTW@M9DGrW3>>a7HUogk4R",
         },
       },
       verboseOutput: true,
