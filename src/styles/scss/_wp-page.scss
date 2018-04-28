@@ -35,26 +35,28 @@ button,
 .btn,
 input[type='button'],
 input[type='submit'] {
-  padding: $spacer / 2 $spacer;
+  padding: $spacer $spacer * 2;
   color: $white;
   background-color: $blue-3;
   border: none;
   cursor: pointer;
+  border-radius: 0;
 
   @include box-shadow(3,$blue-4);
 
-  @include hover-focus-active {
+  &:hover {
+    background-color: mix($blue-1,$blue-3,50);
+    color: $white;
+
+    @include box-shadow(3,$blue-3);
+  }
+
+  &:focus,
+  &:active {
     background-color: $coral;
     color: $blue-4;
     text-decoration: underline;
     text-decoration-color: $blue-3;
-  }
-
-  @include hover {
-    background-color: $blue-1;
-    color: $blue-3;
-
-    @include box-shadow(3,$blue-3);
   }
 }
 

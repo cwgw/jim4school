@@ -5,6 +5,10 @@ import Helmet from 'react-helmet'
 import styled, { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
 
+injectGlobal`
+  ${normalize()}
+`
+
 import Wrap from 'components/Wrap'
 import Header from 'components/Header'
 
@@ -48,8 +52,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-
-injectGlobal`
-  ${normalize()}
 `
