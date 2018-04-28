@@ -23,9 +23,9 @@ function Template (props) {
   return (
     <Wrap>
       <Helmet>
-        <title></title>
-        <meta name="description" content="Sample" />
-        <meta name="keywords" content="sample, something" />
+        <title>Jim Swaim for Brookline School Cmmittee</title>
+        <meta name="description" content="Jim Swaim taught at Devotion School in Brookline and went on to become Vice Principal at Pierce School, Principal of Lawrence School, and Principal of Cabot School in Newton." />
+        <meta name="keywords" content="Jim, Swaim, Brookline, School, Committee" />
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,600|Lora:700" rel="stylesheet" />
       </Helmet>
       <Header
