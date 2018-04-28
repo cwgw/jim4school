@@ -9,8 +9,6 @@ const auth = {
   wpcom_pass: process.env.GATSBY_WPCOM_PASS || process.env.WPCOM_PASS,
 }
 
-console.log(auth)
-
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',

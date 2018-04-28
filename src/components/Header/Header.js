@@ -32,7 +32,6 @@ const Header = (props) => {
       <StyledEdge
         colorPrimary={theme.color.blue[3]}
         colorSecondary={theme.color.blue[1]}
-        height={400}
       />
       <Inner>
         <LogoLink to="/" >

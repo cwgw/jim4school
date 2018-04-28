@@ -1,3 +1,6 @@
+# MacOS meta files
+.DS_Store
+
 # Project dependencies
 .cache
 node_modules

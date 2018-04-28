@@ -73,8 +73,12 @@ form,
   }
 
   label {
-    padding-right: $spacer / 2;
-    width: 30%;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      padding-right: $spacer / 2;
+      width: 30%;
+    }
   }
 
   label span {
@@ -84,7 +88,11 @@ form,
   }
 
   label + input {
-    width: 70%;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      width: 70%;
+    }
   }
 
   input {
@@ -101,8 +109,11 @@ form,
   }
 
   label.radio {
-    width: 70%;
-    margin-left: auto;
+
+    @include media-breakpoint-up(md) {
+      width: 70%;
+      margin-left: auto;
+    }
   }
 
   label.radio .radio {

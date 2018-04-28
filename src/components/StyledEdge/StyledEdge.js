@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import media from 'utils/media'
 
 const defaultProps = {
-  height: 400,
+  height: 384,
 }
 
 function StyledEdge (props) {
@@ -25,7 +25,7 @@ function StyledEdge (props) {
         </filter>
       </defs>
       <path
-        d={`M0,0 l100,0 l100,${y} C50,${y + 80} 20,${y + 180} 00,${y + 150}z`}
+        d={`M0,0 l100,0 l100,${y} C50,${y + 80} 20,${y + 150} 00,${y + 140}z`}
         fill={colorSecondary}
         // filter="url(#TurbulentFilter)"
         // transform="matrix(1.15,0,0,1,-10,-8)"
@@ -39,6 +39,8 @@ function StyledEdge (props) {
    </Svg>
   )
 }
+
+StyledEdge.defaultProps = defaultProps
 
 export default StyledEdge
 
