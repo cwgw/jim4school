@@ -5,14 +5,6 @@
  */
 const path = require('path')
 
-// exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-//   const { createNodeField } = boundActionCreators
-
-//   if (/wordpressPage/.test(node.internal.type) && typeof node.slug !== 'undefined') {
-
-//   }
-// }
-
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
   const pageTemplate = path.resolve('src/templates/page.js')
