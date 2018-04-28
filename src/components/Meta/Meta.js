@@ -38,6 +38,13 @@ function Meta (props) {
       <meta name="og:url" content={metaUrl} />
       <meta name="og:image" content={metaImage} />
       <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,600|Lora:700" rel="stylesheet" />
+      <script type="application/ld+json" >{`
+        {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "name": "${siteTitle}"
+        }
+      `}</script>
       <html lang="en" />
       {children}
     </Helmet>
