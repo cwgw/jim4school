@@ -35,6 +35,7 @@ button,
 .btn,
 input[type='button'],
 input[type='submit'] {
+  display: inline-block;
   padding: $spacer $spacer * 2;
   color: $white;
   background-color: $blue-3;
