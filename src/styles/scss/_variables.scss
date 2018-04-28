@@ -1,0 +1,58 @@
+// Color
+//
+//
+$blue-00: #f1f8fe !default;
+$blue-0: #e3f2fd !default;
+$blue-1: #bbdefb !default;
+$blue-2: #1e88e5 !default;
+$blue-3: #2962ff !default;
+$blue-4: #0d47a1 !default;
+
+$coral: #ffab91 !default;
+
+$white: #fff !default;
+$black: #37474f !default;
+
+$body-color: $blue-4 !default;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+), $spacers);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+// Fonts
+//
+//
+
+$font-family-sans-serif:  "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif:       "Lora", "Georgia", "Palatino", serif !default;
+
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                ($font-size-base * 1.25) !default;
+$font-size-sm:                ($font-size-base * .875) !default;
+
+$line-height:                 1.5;
+
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            600 !default;

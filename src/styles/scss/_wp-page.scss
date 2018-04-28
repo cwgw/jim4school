@@ -1,0 +1,112 @@
+.entry-header {
+  background-color: $blue-00;
+  color: $blue-4;
+  padding: $spacer * $line-height $spacer;
+  margin-bottom: $spacer;
+}
+
+.lead,
+hr + p,
+.entry-content > p:first-child {
+  font-size: 1.375em;
+  font-family: $font-family-serif;
+  font-weight: 700;
+  line-height: 1.375;
+}
+
+@include media-breakpoint-up(lg) {
+
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseling;
+    width: 100%;
+
+    .col {
+      flex: 1;
+    }
+  }
+}
+
+// Buttons
+//
+//
+button,
+.btn,
+input[type='button'],
+input[type='submit'] {
+  padding: $spacer / 2 $spacer;
+  color: $white;
+  background-color: $blue-3;
+  border: none;
+  cursor: pointer;
+
+  @include box-shadow(3,$blue-4);
+
+  @include hover-focus-active {
+    background-color: $coral;
+    color: $blue-4;
+    text-decoration: underline;
+    text-decoration-color: $blue-3;
+  }
+
+  @include hover {
+    background-color: $blue-1;
+    color: $blue-3;
+
+    @include box-shadow(3,$blue-3);
+  }
+}
+
+// Jetpack forms
+// 
+// 
+form,
+.contact-form {
+
+  & > div {
+    margin-top: $spacer * $line-height;
+    margin-bottom: $spacer * $line-height;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+  }
+
+  label {
+    padding-right: $spacer / 2;
+    width: 30%;
+  }
+
+  label span {
+    color: $blue-2;
+    margin-left: $spacer / 2;
+    font-size: 0.875em;
+  }
+
+  label + input {
+    width: 70%;
+  }
+
+  input {
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-light;
+  }
+
+  input[type='text'],
+  input[type='email'] {
+    background-color: $blue-00;
+    padding: $spacer / 2;    
+    border: 1px solid $blue-1;
+    color: $black;    
+  }
+
+  label.radio {
+    width: 70%;
+    margin-left: auto;
+  }
+
+  label.radio .radio {
+    margin-right: $spacer / 2;
+    margin-left: $spacer / 2;
+  }
+}
