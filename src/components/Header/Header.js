@@ -21,7 +21,7 @@ const Header = (props) => {
     .map(({node}) => (
       <NavItem
         key={node.slug}
-        to={node.slug === 'home' ? '/' : node.slug}
+        to={node.slug === 'home' ? '/' : `/${node.slug}`}
       >
         {node.title}
       </NavItem>
