@@ -2,36 +2,34 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import styled, { injectGlobal } from 'styled-components'
-import { normalize } from 'polished'
-
-injectGlobal`
-  ${normalize()}
-`
+require('styles/style.scss')
+import 'styles/globalStyle'
 
 import Wrap from 'components/Wrap'
 import Header from 'components/Header'
-
-require('styles/style.scss')
 
 const propTypes = {
   children: PropTypes.func,
 }
 
 function Template (props) {
+  const { siteMetadata } = props.data.site
+  const { src: image } = props.data.ogimg.childImageSharp.sizes
+  const { location } = props
 
   return (
     <Wrap>
-      <Helmet>
-        <title>Jim Swaim for Brookline School Cmmittee</title>
-        <meta name="description" content="Jim Swaim taught at Devotion School in Brookline and went on to become Vice Principal at Pierce School, Principal of Lawrence School, and Principal of Cabot School in Newton." />
-        <meta name="keywords" content="Jim, Swaim, Brookline, School, Committee" />
-        <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,600|Lora:700" rel="stylesheet" />
-      </Helmet>
       <Header
         navItems={props.data.allWordpressPage.edges}
       />
-      {props.children()}
+      {props.children({
+        history: props.history,
+        location: props.location,
+        siteMetadata: {
+          image: image,
+          ...siteMetadata,
+        },
+      })}
     </Wrap>
   )
 }
@@ -42,6 +40,19 @@ export default Template
 
 export const pageQuery = graphql`
   query pageList {
+    site {
+      siteMetadata {
+        title
+        root
+      }
+    }
+    ogimg: file(relativePath: {eq: "images/ogimg.jpg"}) {
+      childImageSharp {
+        sizes {
+          ...GatsbyImageSharpSizes_noBase64
+        }
+      }
+    }
     allWordpressPage {
       edges {
         node {

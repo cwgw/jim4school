@@ -1,11 +1,14 @@
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
+import Helmet from 'react-helmet'
 import GatsbyImage from 'gatsby-image'
+import styled, { ThemeProvider } from 'styled-components'
 
 import { container, boxShadow } from 'utils/style'
 import theme from 'utils/theme'
 import media from 'utils/media'
 import { mix } from 'polished'
+
+import Meta from 'components/Meta'
 
 // import 'styles/wp-page.scss'
 
@@ -17,7 +20,7 @@ const defaultProps = {
 function Page (props) {
 
   const { content, title, slug, featured_media } = props.data.wordpressPage
-  const { containerWidth, contentWidth } = props
+  const { containerWidth, contentWidth, siteMetadata } = props
 
   /**
    * search and replace my user info because there doesn't appear to be away
@@ -46,6 +49,12 @@ function Page (props) {
       ...theme
     })} >
       <Container offset={!!Image} >
+        <Meta
+          title={title}
+          slug={slug}
+          siteMetadata={siteMetadata}
+          featuredImage={featured_media}
+        />
         <Content offset={!!Image} >
           {Title}
           {Image}
@@ -59,6 +68,25 @@ function Page (props) {
 Page.defaultProps = defaultProps
 
 export default Page
+
+export const pageQuery = graphql`
+  query singlePage($slug: String!) {
+    wordpressPage(slug: {eq: $slug}) {
+      slug
+      title
+      content
+      featured_media {
+        localFile {
+          childImageSharp {
+            sizes {
+              ...GatsbyImageSharpSizes_withWebp_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 const Container = styled.div`
   position: relative;
@@ -84,7 +112,6 @@ const FeaturedImage = styled.figure`
     margin: -10rem 2rem 1.5rem;
     float: left;
   `}
-
 
   ${({theme}) => `
     @media (min-width: ${theme.outerWidth}px) {
@@ -123,23 +150,4 @@ const PageTitle = styled.h1`
 
 const EntryContent = styled.div`
   padding: 2rem;
-`
-
-export const pageQuery = graphql`
-  query singlePage($slug: String!) {
-    wordpressPage(slug: {eq: $slug}) {
-      slug
-      title
-      content
-      featured_media {
-        localFile {
-          childImageSharp {
-            sizes {
-              ...GatsbyImageSharpSizes_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    }
-  }
 `

@@ -11,7 +11,8 @@ const auth = {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Jim Swaim for Brookline School Committee',
+    root: 'https://jimswaim4schoolcommittee.com',
   },
   plugins: [
     {
