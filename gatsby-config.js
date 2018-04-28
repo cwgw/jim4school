@@ -1,3 +1,16 @@
+require('dotenv').config({
+  path: `.env.development`,
+});
+
+const auth = {
+  wpcom_app_clientSecret: process.env.GATSBY_WPCOM_APP_CLIENTSECRET || process.env.WPCOM_APP_CLIENTSECRET,
+  wpcom_app_clientId: process.env.GATSBY_WPCOM_APP_CLIENTID || process.env.WPCOM_APP_CLIENTID,
+  wpcom_user: process.env.GATSBY_WPCOM_USER || process.env.WPCOM_USER,
+  wpcom_pass: process.env.GATSBY_WPCOM_PASS || process.env.WPCOM_PASS,
+}
+
+console.log(auth)
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
@@ -16,12 +29,7 @@ module.exports = {
         protocal: 'https',
         hostingWPCOM: true,
         useACF: false,
-        auth: {
-          wpcom_app_clientSecret: "T7mhiHktAHGYh5P94iQEXMUVaA8l3nxU9relUb1MOlmBtueX7NfyPS6gNAmiPy82",
-          wpcom_app_clientId: "57759",
-          wpcom_user: "wright.char@gmail.com",
-          wpcom_pass: "EqvWTW@M9DGrW3>>a7HUogk4R",
-        },
+        auth: auth,
       },
       verboseOutput: true,
     },

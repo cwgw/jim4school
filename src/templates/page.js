@@ -19,6 +19,13 @@ function Page (props) {
   const { content, title, slug, featured_media } = props.data.wordpressPage
   const { containerWidth, contentWidth } = props
 
+  /**
+   * search and replace my user info because there doesn't appear to be away
+   * to prevent default value insertion by jetpack (when using wpcom)
+   * @see  https://github.com/Automattic/jetpack/blob/master/modules/contact-form/grunion-contact-form.php#L2591
+   */
+  const parsedContent = content.replace(/(wright\.char@gmail.com|charliewrightgordonwright)/gi, '')
+
   const Title = slug !== 'home' ? <PageTitle>{title}</PageTitle> : null
 
   let Image
@@ -42,7 +49,7 @@ function Page (props) {
         <Content offset={!!Image} >
           {Title}
           {Image}
-          <EntryContent dangerouslySetInnerHTML={{__html: content}} />
+          <EntryContent dangerouslySetInnerHTML={{__html: parsedContent}} />
         </Content>
       </Container>
     </ThemeProvider>

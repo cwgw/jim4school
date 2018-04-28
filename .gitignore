@@ -5,3 +5,6 @@ yarn-error.log
 
 # Build directory
 /public
+
+# WordPress.com Login Credentials
+.env.development
