@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 
-const breakpoint = {
+const breakpoints = {
   xs: 0,
   sm: 576,
   md: 768,
@@ -8,9 +8,9 @@ const breakpoint = {
   xl: 1200
 }
 
-const media = Object.keys(breakpoint).reduce((acc, label) => {
+const media = Object.keys(breakpoints).reduce((acc, label) => {
   acc[label] = (...args) => css`
-    @media (min-width: ${breakpoint[label]}px) {
+    @media (min-width: ${breakpoints[label]}px) {
       ${css(...args)}
     }
   `
@@ -20,6 +20,6 @@ const media = Object.keys(breakpoint).reduce((acc, label) => {
 export default media
 
 export {
-  breakpoint,
+  breakpoints,
   media
 }

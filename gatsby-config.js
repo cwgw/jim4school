@@ -11,8 +11,8 @@ const auth = {
 
 module.exports = {
   siteMetadata: {
-    title: 'Jim Swaim for Brookline School Committee',
-    root: 'https://jimswaim4schoolcommittee.com',
+    siteTitle: 'Jim Swaim for Brookline School Committee',
+    siteUrl: 'https://jimswaim4schoolcommittee.com',
   },
   plugins: [
     {
@@ -32,6 +32,7 @@ module.exports = {
       },
       verboseOutput: true,
     },
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sharp',

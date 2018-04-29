@@ -22,11 +22,11 @@ function Meta (props) {
     ...throughProps
   } = props
 
-  const { title: siteTitle, root: siteRoot } = siteMetadata
+  const { siteTitle, siteUrl } = siteMetadata
 
   const metaTitle = slug === 'home' ? siteTitle : `${title} | ${siteTitle}`
-  const metaUrl = url.resolve(siteRoot,slug)
-  const metaImage = url.resolve(siteRoot,siteMetadata.image)
+  const metaUrl = url.resolve(siteUrl,slug)
+  const metaImage = url.resolve(siteUrl,siteMetadata.image)
 
   return (
     <Helmet {...throughProps} >

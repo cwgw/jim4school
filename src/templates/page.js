@@ -88,7 +88,7 @@ export const pageQuery = graphql`
   }
 `
 
-const Container = styled.div`
+export const Container = styled.div`
   position: relative;
   margin: 0 auto 3rem;
   max-width: 100%;
@@ -123,7 +123,7 @@ const FeaturedImage = styled.figure`
   ${boxShadow(4, mix(0.25,theme.color.blue[3],'black'))}
 `
 
-const Content = styled.article`
+export const Content = styled.article`
   max-width: 100%;
   margin-left: 0;
   border-top: 1px solid transparent;

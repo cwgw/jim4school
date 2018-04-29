@@ -42,8 +42,8 @@ export const pageQuery = graphql`
   query pageList {
     site {
       siteMetadata {
-        title
-        root
+        siteTitle
+        siteUrl
       }
     }
     ogimg: file(relativePath: {eq: "images/ogimg.jpg"}) {
