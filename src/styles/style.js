@@ -1,17 +1,9 @@
 import { css } from 'styled-components'
 import { parseToRgb } from 'polished'
 
-import theme from 'utils/theme'
+import { breakpoints } from 'styles/theme'
 
-const container = (size = 'sm') => (`
-  width: ${theme.container[size]};
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 ${theme.padding.x};
-`)
-
-const boxShadow = (level = 3, color = '#000') => {
+export const boxShadow = (level = 3, color = '#000') => {
   const parsedColor = parseToRgb(color)
   const c = parsedColor.red+','+parsedColor.green+','+parsedColor.blue
   const shadows = [
@@ -26,7 +18,11 @@ const boxShadow = (level = 3, color = '#000') => {
   return `box-shadow: ${shadows[level]};`
 }
 
-export {
-  container,
-  boxShadow,
-}
+export const media = Object.keys(breakpoints).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (min-width: ${breakpoints[label]}px) {
+      ${css(...args)}
+    }
+  `
+  return acc
+}, {})

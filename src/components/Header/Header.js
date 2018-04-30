@@ -6,9 +6,8 @@ import { mix } from 'polished'
 
 import StyledEdge from 'components/StyledEdge'
 
-import { container, boxShadow } from 'utils/style'
-import media from 'utils/media'
-import theme from 'utils/theme'
+import { media, boxShadow } from 'styles/style'
+import theme from 'styles/theme'
 
 import logo from './logo-light.svg'
 import logoDark from './logo-dark.svg'
@@ -88,7 +87,7 @@ const Inner = styled.div`
   left: 0;
   display: flex;
   flex-flow: column nowrap;
-  width: ${({theme}) => theme.container.xl };
+  width: ${({theme}) => theme.breakpoint.xl };
   max-width: 100%;
   margin: 0 auto 3rem;
   background: ${theme.color.blue[3]};

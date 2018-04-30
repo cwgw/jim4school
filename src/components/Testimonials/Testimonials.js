@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { mix } from 'polished'
 
-import { boxShadow } from 'utils/style'
+import { boxShadow } from 'styles/style'
 
 const propTypes = {
   children: PropTypes.array.isRequired

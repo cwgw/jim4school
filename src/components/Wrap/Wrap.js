@@ -2,8 +2,8 @@ import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { mix } from 'polished'
 
-import theme from 'utils/theme'
-import { media } from 'utils/media'
+import { media } from 'styles/style'
+import theme from 'styles/theme'
 
 function Wrap (props) {
   return (

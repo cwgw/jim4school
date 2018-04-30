@@ -10,8 +10,8 @@ import Testimonials from 'components/Testimonials'
 import PageTitle from 'components/PageTitle'
 import Meta from 'components/Meta'
 
-import media, { breakpoints } from 'utils/media'
-import { boxShadow } from 'utils/style'
+import { media, boxShadow } from 'styles/style'
+import { breakpoints } from 'styles/theme'
 
 const propTypes = {
   slug: PropTypes.string.isRequired,
@@ -56,7 +56,7 @@ function WpPage (props) {
   return (
     <Content
       outerWidth={featuredImage || testimonials ? breakpoints.lg : undefined}
-      isEmpty={content === ''}
+      isEmpty={content.trim() === ''}
     >
       <Meta
         title={title}

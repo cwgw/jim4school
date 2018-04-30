@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components'
-
-import media, { breakpoints } from 'utils/media'
-import { boxShadow } from 'utils/style'
 import { mix } from 'polished'
+
+import { media, boxShadow } from 'styles/style'
+import { breakpoints } from 'styles/theme'
 
 const propTypes = {
   children: PropTypes.oneOfType([
@@ -13,7 +13,7 @@ const propTypes = {
   ]),
   outerWidth: PropTypes.number,
   innerWidth: PropTypes.number,
-  isEmpty: PropTypes.boolean,
+  isEmpty: PropTypes.bool,
 } 
 
 const defaultProps = {

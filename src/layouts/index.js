@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-require('styles/style.scss')
+require('styles/scss/style.scss')
 import 'styles/globalStyle'
 
 import Wrap from 'components/Wrap'
