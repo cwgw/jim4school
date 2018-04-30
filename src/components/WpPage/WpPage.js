@@ -55,7 +55,7 @@ function WpPage (props) {
 
   return (
     <Content
-      outerWidth={featuredImage || testimonials ? breakpoints.lg : undefined}
+      outerWidth={Image || Endorsements ? breakpoints.lg : undefined}
       isEmpty={content.trim() === ''}
     >
       <Meta

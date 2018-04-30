@@ -85,4 +85,8 @@ const Inner = styled.div`
       `      
     }
   }}
+
+  img {
+    max-width: 100%;
+  }
 `

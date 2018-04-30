@@ -1,5 +1,6 @@
 import React from 'react'
 import GatsbyLink from 'gatsby-link'
+import Content from 'components/Content'
 
 import styled from 'styled-components'
 import { mix } from 'polished'
@@ -50,32 +51,25 @@ export default Header
 
 const Link = styled(GatsbyLink)`
   text-decoration: none;
-  color: inherit;
+  color: white;
 
   &:hover {
-    color: inherit;
+    color: white;
+    background-color: ${({theme}) => theme.color.blue[4]};
   }
 
   &:focus {
     color: ${({theme}) => theme.color.blue[4]};
-    background-color: ${({theme}) => theme.color.secondary}
+    background-color: ${({theme}) => theme.color.secondary};
     outline-color: ${({theme}) => theme.color.blue[4]};
   }
 
-  ${media.lg`
-
-    &:hover {
-      color: inherit;
-      background-color: ${({theme}) => theme.color.blue[4]};
-    }
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-      text-decoration-color: ${({theme}) => theme.color.blue[2]};
-      outline-color: ${({theme}) => theme.color.blue[4]};
-    }
-  `}
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    text-decoration-color: ${({theme}) => theme.color.blue[2]};
+    outline-color: ${({theme}) => theme.color.blue[4]};
+  }
 `
 
 const Outer = styled.header`
