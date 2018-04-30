@@ -87,7 +87,7 @@ const Inner = styled.div`
   left: 0;
   display: flex;
   flex-flow: column nowrap;
-  width: ${({theme}) => theme.breakpoint.xl };
+  width: ${({theme}) => theme.breakpoint.xl}px;
   max-width: 100%;
   margin: 0 auto 3rem;
   background: ${theme.color.blue[3]};
