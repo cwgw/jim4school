@@ -8,11 +8,20 @@ const path = require('path')
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
   const pageTemplate = path.resolve('src/templates/page.js')
+  const additionalQuery = `allWordpressWpJetpackTestimonial {
+    edges {
+      node {
+        title
+        slug
+        content
+      }
+    }
+  }`
 
   return new Promise((resolve, reject) => {
     resolve(
       graphql(`{
-        allWordpressPage {
+        pages: allWordpressPage {
           edges {
             node {
               slug
@@ -27,7 +36,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           reject(result.errors)
         }
 
-        result.data.allWordpressPage.edges.forEach(({node}) => {
+        result.data.pages.edges.forEach(({node}) => {
           const slug = node.slug === 'home' ? '/' : node.slug
 
           createPage({
@@ -35,6 +44,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             component: pageTemplate,
             context: {
               slug: node.slug,
+              testimonials: node.slug === 'endorsements',
             },
           })
         })

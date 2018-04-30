@@ -90,3 +90,16 @@ ul {
   margin-bottom: $spacer * $line-height;
   margin-top: $spacer * $line-height;
 }
+
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
