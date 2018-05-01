@@ -23,7 +23,7 @@ const Header = (props) => {
         key={node.slug}
         to={node.slug === 'home' ? '/' : `/${node.slug}`}
       >
-        {node.title}
+        <span dangerouslySetInnerHTML={{__html: node.title}} />
       </NavItem>
     ))
 

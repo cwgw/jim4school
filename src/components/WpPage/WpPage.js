@@ -44,7 +44,7 @@ function WpPage (props) {
   )
 
   const Title = slug !== 'home'
-    ? <PageTitle>{title}</PageTitle>
+    ? <PageTitle><span dangerouslySetInnerHTML={{__html: title}}/></PageTitle>
     : null
 
   const parsedContent = content.replace(/(wright\.char@gmail.com|charliewrightgordonwright)/gi, '')
@@ -64,8 +64,8 @@ function WpPage (props) {
         siteMetadata={siteMetadata}
         featuredImage={featuredImage}
       />
-      {Title}
       {Image}
+      {Title}
       <div dangerouslySetInnerHTML={{__html: parsedContent}} />
       {Endorsements}
     </Content>

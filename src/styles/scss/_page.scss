@@ -1,3 +1,6 @@
+// entry-content / entry-header
+//
+
 blockquote,
 .entry-header {
   background-color: $blue-00;
@@ -13,6 +16,11 @@ hr + p,
   font-family: $font-family-serif;
   font-weight: 700;
   line-height: 1.375;
+}
+
+.entry-content img {
+  max-width: 100%;
+  height: auto;
 }
 
 @include media-breakpoint-up(lg) {
