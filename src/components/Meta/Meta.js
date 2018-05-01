@@ -28,15 +28,18 @@ function Meta (props) {
   const metaUrl = url.resolve(siteUrl,slug)
   const metaImage = url.resolve(siteUrl,siteMetadata.image)
 
+  // quick and dirty find/replace for doubly escaped html characters
+  const parsedMetaTitle = metaTitle.replace(/&nbsp;/gi,' ')
+
   return (
     <Helmet {...throughProps} >
-      <title>{metaTitle}</title>
+      <title>{parsedMetaTitle}</title>
       <meta name="description" content="Jim Swaim taught at Devotion School in Brookline and went on to become Vice Principal at Pierce School, Principal of Lawrence School, and Principal of Cabot School in Newton." />
       <meta name="keywords" content="Jim, Swaim, Brookline, School, Committee" />
       <meta name="og:locale" content="en_US" />
       <meta name="og:type" content="website" />
-      <meta name="og:title" content={metaTitle} />
-      <meta name="og:site_name" content={metaTitle} />
+      <meta name="og:title" content={parsedMetaTitle} />
+      <meta name="og:site_name" content={parsedMetaTitle} />
       <meta name="og:url" content={metaUrl} />
       <meta name="og:image" content={metaImage} />
       <meta name="og:image:secure_url" content={metaImage} />
